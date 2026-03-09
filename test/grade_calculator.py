@@ -1,11 +1,16 @@
-# Grade Calculator with formatted output
+# Grade Calculator with formatted output (name validation)
 
 while True:
-    name = input("\nEnter student's name (or type Exit to stop): ")
-
-    if name.lower() == "exit":
-        print("Program ended.")
-        break
+    # Validate name input
+    while True:
+        name = input("\nEnter student's name (or type Exit to stop): ")
+        if name.lower() == "exit":
+            print("Program ended.")
+            exit()  # End program immediately
+        elif name.isalpha():  # Check if name contains only letters
+            break
+        else:
+            print("Invalid input! Name should contain only letters. Please try again.")
 
     # Input marks
     mark1 = float(input("Enter mark for subject 1: "))
